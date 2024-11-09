@@ -31,7 +31,7 @@ public class SecurityConfig {
         authenticationManagerBuilder.inMemoryAuthentication()
                 .withUser(SECURE_KEY_USERNAME)
                 .password(new BCryptPasswordEncoder().encode(SECURE_KEY_PASSWORD))
-                .authorities(AuthorityUtils.commaSeparatedStringToAuthorityList("ROL_ADMIN"))
+                .authorities(AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_ADMIN"))
                 .and()
                 .passwordEncoder(new BCryptPasswordEncoder());
         return http.authorizeHttpRequests(auth -> auth

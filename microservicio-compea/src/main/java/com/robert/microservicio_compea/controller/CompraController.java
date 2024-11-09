@@ -22,8 +22,7 @@ public class CompraController {
     }
 
     @GetMapping("{userId}")
-    public ResponseEntity<?> getAllCompraOfUserId(@RequestBody Long userId){
-
+    public ResponseEntity<?> getAllCompraOfUserId(@PathVariable Long userId){
         // return ResponseEntity.ok(compraService.findByCompraOfUser(userId)); Otra forma de hacerlo
         return new ResponseEntity<>(compraService.findByCompraOfUser(userId), HttpStatus.OK);
     }
