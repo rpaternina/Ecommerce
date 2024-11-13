@@ -14,7 +14,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByUsername(String username);
-    
+
     //Este metodo es para actualizar un usuario dependiendo el rol
     @Modifying // @Modifying indica que ese metodo hara modificaciones
     @Query("update User set role=:role where username=:username") //Sentencia SQL que actualiza un usuario por un rol
